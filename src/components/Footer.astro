@@ -1,0 +1,27 @@
+---
+const {colors}= Astro.props
+---
+
+
+
+   <footer style={`background-color:var(${colors})`}>
+      <div>
+         <h1>modern art gallery</h1>
+         <p>The Modern Art Gallery is free to all visitors and open seven days a week from 8am to 9pm. Find us at 99 King Street, Newport, USA.</p>
+         <div class="social-links">
+            <!-- icons go here -->
+         </div>
+      </div>
+   </footer>
+
+
+
+<style>
+   /* style color for rest of the pages */
+   footer{
+      background-color: blue;
+   }
+</style>
+
+<!-- the footer component will take a prop I pass to it -->
+<!-- locationlayout is passing the colors props to this component -->

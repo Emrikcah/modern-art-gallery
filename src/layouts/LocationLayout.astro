@@ -1,0 +1,24 @@
+---
+import '../styles/global.css'
+import Footer from '../components/Footer.astro'
+import BaseHead from '../components/BaseHead.astro'
+
+//prop from location.astro
+const {title} = Astro.props
+
+---
+
+
+<html lang="en">
+<BaseHead title={title}/>
+<body>
+   <!-- slot represents the location.astro content -->
+   <slot/>
+  <!-- <Footer colors={'--golden'}/> -->
+</body>
+</html>
+
+
+
+
+

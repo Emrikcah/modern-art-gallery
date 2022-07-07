@@ -38,7 +38,7 @@ const dG3Srcset = `${dGrid3}, ${dGrid32x} 2x`;
 				<source srcset={tG1Srcset} media="(min-width: 700px)" type="image/jpg">
 				<img src={mGrid1} alt="view of a pictures in the gallery" srcset={mGrid12x}>
 			</picture>
-			<div class="g1-text-content">
+			<div class="grid1-text-content">
 				<h1 class="grid1-heading">your day <br/> at the gallery</h1>
 				<p>Wander through our distinct collections and find new insights about our artists. Dive into the details of their creative process.</p>
 			</div>
@@ -54,8 +54,7 @@ const dG3Srcset = `${dGrid3}, ${dGrid32x} 2x`;
 			<source srcset={tG3Srcset} media="(min-width: 700px)" type="image/jpg">
 			<img src={mGrid3} alt="view of a pictures in the gallery" srcset={mGrid32x}>
 		</picture>
-		<div class="g3-text-content-bgblack">
-			
+		<div class="grid3-text-content-bgblack">
 				<h1 class="grid3-heading">come & be inspired</h1>
 				<p>We’re excited to welcome you to our gallery and see how our collections influence you.</p>
 			
@@ -79,20 +78,20 @@ const dG3Srcset = `${dGrid3}, ${dGrid32x} 2x`;
 		margin-bottom: 16px;
 	}
 
-	.g3-text-content-bgblack{
+	.grid3-text-content-bgblack{
 		color: var(--white);
 		background-color: var(--black);
 		padding: 48px 24px;
 	}
 
-	/* typography */
+	
 	h1{
 		text-transform: uppercase;
 		font-size: var(--heading-m2);
 		line-height: var(--lineheight-m2);
 	}
 
-	.g1-text-content{
+	.grid1-text-content{
 		margin-bottom: 32px;
 	}
 
@@ -115,13 +114,14 @@ const dG3Srcset = `${dGrid3}, ${dGrid32x} 2x`;
 		row-gap: 11px;
 		grid-template-rows: auto 313px 396px;
 		grid-template-columns: 1fr auto 280px;
+		/* grid-auto-flow: dense; */
 	   }
 
-		.grid1,.grid2,.grid3,.g1-text-content{
+		.grid1,.grid2,.grid3,.grid1-text-content{
 			margin-bottom: 0;
 		}
 
-		.g1-text-content{
+		.grid1-text-content{
 			align-self: center;
 			grid-row: 1;
 			grid-column: 1/2;
@@ -144,7 +144,7 @@ const dG3Srcset = `${dGrid3}, ${dGrid32x} 2x`;
 			grid-column: 3;
 		}
 
-		.g3-text-content-bgblack{
+		.grid3-text-content-bgblack{
 			grid-row: 3;
 			grid-column: 3;
 			padding: 85px 28px
@@ -153,5 +153,41 @@ const dG3Srcset = `${dGrid3}, ${dGrid32x} 2x`;
 		
 	}
 
+	@media(min-width: 1440px){
+
+		h1{
+			font-size: var(--heading-m);
+			line-height: var(--lineheight-m);
+		}
+
+		p{
+			font-size: var(--body-m);
+			line-height: var(--body-lineheight-m);
+		}
+
+		.content-container{
+			max-width: 1110px;
+		}
+
+		.grid{
+		grid-template-columns: 1fr auto 445px;
+		row-gap: 30px;
+
+		}
+
+		.grid1-text-content{
+			max-width: 350px;
+		}
+
+		.grid1-heading br{
+			display: none;
+		}
+
+		.grid3-text-content-bgblack{
+			max-height: 377px;
+		}
+	}
+
 	
 </style>
+<!-- todo: fix text and row-gap pushes down grid3-text-content-bgblack -->

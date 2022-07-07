@@ -45,7 +45,7 @@ const dSrcset = `${dGranny}, ${dGranny2x} 2x`;
 .blackBg{
    align-self: start;
    background-color: var(--black);
-   width: 400px;
+   width: 450px;
    height: 800px;
    display: none;
    
@@ -99,12 +99,13 @@ const dSrcset = `${dGranny}, ${dGranny2x} 2x`;
 
    @media(min-width: 1400px){
       .grid{
-         grid-template-columns: 400px 540px 1fr;
+         grid-template-columns: 450px 540px 1fr;
       }
 
       .content{
          display: flex;
          justify-content: space-between;
+         min-height: 48vh;
          min-width: 1110px;
          margin: 0 auto;
       }
@@ -129,6 +130,14 @@ const dSrcset = `${dGranny}, ${dGranny2x} 2x`;
 
       .content{
          grid-column: 1/-1;
+      }
+
+      .title{
+         margin-left: 45px;
+      }
+
+      .content-text{
+         margin-right: -40px;
       }
 
       h1{

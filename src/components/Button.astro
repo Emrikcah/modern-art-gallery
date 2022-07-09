@@ -1,0 +1,63 @@
+---
+const {img} = Astro.props
+const {altText} = Astro.props
+const {text} = Astro.props
+const {whereTo} = Astro.props
+
+//for css
+const {order} = Astro.props
+---
+
+<div class="link">
+   <a href={whereTo}>{text}</a>
+   <div class="arrow">
+      <img src={img} alt={altText}>
+   </div>
+</div>
+
+<style define:vars={{order}}>
+
+   a{
+      color: var(--white);
+      font-size: var(--heading-s2);
+      font-weight: 800;
+      text-decoration: none;
+      text-transform: uppercase;
+      order: var(--order);
+      line-height: 2.394rem;
+      letter-spacing: .364rem;
+      margin: auto;
+   }
+
+   .link,.arrow{
+      display: flex;
+      align-items: center;
+      height: 72px;
+      
+   }
+
+   .link{
+      justify-content: space-between;
+      background-color: var(--black);
+      width: 260px;
+    }
+
+   .arrow{
+      background-color: var(--golden);
+      justify-content: center;
+      width: 56px;
+   }
+
+   .link:hover{
+      background-color: var(--golden);
+   }
+
+   .link:hover .arrow{
+      background-color: var(--black);
+   }
+   
+   .link:hover,.link:hover .arrow{
+      transition: background-color .5s ease-out;
+
+   }
+</style>

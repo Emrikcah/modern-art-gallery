@@ -51,9 +51,21 @@ h1,a{
    font-family: 'Big Shoulders Display', cursive;
 }
 
+.content-container{
+   max-width: 343px;
+   margin: auto;
+}
+
+@media(min-width: 700px){
+   .content-container{
+      max-width: 689px;
+   }
+}
+
 @media(min-width: 1439px){
    body{
       max-width: 1440px;
       margin: auto;
    }
 }
+

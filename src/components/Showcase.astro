@@ -1,4 +1,6 @@
 ---
+import Button from './Button.astro'
+
 import mGranny from '/assets/mobile/image-hero.jpg'
 import mGranny2x from '/assets/mobile/image-hero@2x.jpg'
 import tGranny from '/assets/tablet/image-hero.jpg'
@@ -6,8 +8,12 @@ import tGranny2x from '/assets/tablet/image-hero@2x.jpg'
 import dGranny from '/assets/desktop/image-hero.jpg'
 import dGranny2x from '/assets/desktop/image-hero@2x.jpg'
 
+import rightArrow from '/assets/icon-arrow-right.svg'
+
+
 const tSrcset = `${tGranny}, ${tGranny2x} 2x`;
 const dSrcset = `${dGranny}, ${dGranny2x} 2x`;
+
 ---
 
 <section class="showcase">
@@ -28,7 +34,7 @@ const dSrcset = `${dGranny}, ${dGranny2x} 2x`;
                <h1 class="title">modern <br/> art gallery</h1>
                <div class="content-text">
                   <p>The arts in the collection of the Modern Art Gallery all started from a spark of inspiration. Will these pieces inspire you? Visit us and find out.</p>
-                  <a href="/location">Our location</a>
+                  <Button text="Our location" whereTo="/location" img={rightArrow} altText="right arrow"/>
                </div>
           
          </div>

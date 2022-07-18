@@ -19,6 +19,7 @@
    --lineheight-s: 3.6rem;
    --body-m: 2.2rem;
    --body-s: 1.8rem;
+   --body-s2: 1.6rem;
    --body-lineheight-m:3.2rem;
    --body-lineheight-s: 2.8rem;
 }
@@ -47,7 +48,7 @@ img,picture,svg{
    display: block;
 }
 
-h1,a{
+h1,h2,a{
    font-family: 'Big Shoulders Display', cursive;
 }
 
@@ -62,10 +63,10 @@ h1,a{
    }
 }
 
-@media(min-width: 1439px){
-   body{
-      max-width: 1440px;
-      margin: auto;
+@media(min-width: 1000px){
+   .content-container{
+      max-width: 1110px;
+      
    }
 }
 

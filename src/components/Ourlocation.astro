@@ -5,7 +5,7 @@
 <section>
    <div class="content-container">
       <div class="flex">
-         <h1>our location</h1>
+         <h1>our <br> location</h1>
          
          <div>
             <h2>99 king street</h2>
@@ -19,3 +19,89 @@
       </div>
    </div>
 </section>
+
+<style>
+   section{
+      background-color: var(--black);
+      color: var(--white);
+      padding-top: 48px;
+      padding-bottom: 56px;
+
+   }
+   h1{
+      font-size: var(--heading-m2);
+      font-weight: 900;
+      text-transform: uppercase;
+      margin-bottom: 48px;
+      
+   }
+   h1 br{
+      display: none;
+   }
+
+   h2{
+      font-size: var(--body-lineheight-m);
+      font-weight: 900;
+      text-transform: uppercase;
+      color: var(--golden);
+      margin-bottom: 20px;
+   }
+
+   address{
+      font-style: normal;
+      margin-bottom: 20px;
+   }
+
+   @media(min-width: 700px){
+      section{
+         padding-top: 88px;
+         padding-bottom: 80px;
+
+      }
+      .flex{
+         display: flex;
+         justify-content: space-between;
+         
+      }
+
+      h1{
+         font-size: var(--lineheight-m);
+         line-height: var(--heading-m2);
+         margin-bottom: 0;
+      }
+
+      h1 br{
+         display: block;
+      }
+
+      p{
+         max-width: 398px;
+      }
+   }
+
+   @media(min-width: 1000px){
+      section{
+         padding-top: 104px;
+         padding-bottom: 128px;
+      }
+      h1{
+         font-size: var(--heading-l);
+         line-height: var(--lineheight-l);
+      }
+      
+      h2{
+         font-size: var(--heading-s);
+         line-height: var(--lineheight-s);
+         margin-bottom: 24px;
+      }
+
+      address,p{
+         font-size: var(--body-m);
+         line-height: var(--body-lineheight-m);
+         margin-bottom: 32px;
+      }
+      p{
+         max-width: 540px;
+      }
+   }
+</style>

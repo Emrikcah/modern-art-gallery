@@ -1,27 +1,140 @@
 ---
+import {Icon} from 'astro-icon'
 const {colors}= Astro.props
 ---
 
 
+<footer style={`background-color:var(${colors})`} >
 
-   <footer style={`background-color:var(${colors})`}>
-      <div>
-         <h1>modern art gallery</h1>
-         <p>The Modern Art Gallery is free to all visitors and open seven days a week from 8am to 9pm. Find us at 99 King Street, Newport, USA.</p>
-         <div class="social-links">
-            <!-- icons go here -->
+   <div class="content-container">
+
+   <div class="padding">
+      <div class="flex">
+         <div class="logos">
+            {(colors == '--black') ?
+               (<Icon name="logo-light"/>) : (<Icon name="logo-dark"/>)}
          </div>
+            <div class="text">
+               <p>The Modern Art Gallery is free to all visitors and open seven days a week from 8am to 9pm. Find us at 99 King Street, Newport, USA.</p>
+            </div>
+            <div class="social-links">
+               <!-- icons go here -->
+               <a href="https://www.facebook.com">
+                  <Icon name="icon-facebook" />
+               </a>
+               <a href="https://www.instagram.com">
+                  <Icon name="icon-instagram" />
+               </a>
+               <a href="https://www.twitter.com">
+                  <Icon name="icon-twitter" />
+               </a>
+            </div>
       </div>
-   </footer>
+   </div>
+   </div>
+</footer>
 
+<style lang="css">
 
-
-<style>
-   /* style color for rest of the pages */
-   footer{
-      background-color: blue;
+   .padding{
+      padding-top: 48px;
+      padding-bottom: 48px;
    }
+
+   .logos{
+      width: 110px;
+      margin-bottom: 38px;
+   }
+
+   .text{
+      margin-bottom: 38px;
+   }
+
+   .social-links{
+      display: flex;
+      justify-content: space-between;
+      width: 100px;
+   }
+
+   p{
+      color: var(--white);
+   }
+   
+   /* display flex caused svgs to disappear so i had to set the width */
+   [astro-icon="icon-facebook"], [astro-icon="icon-instagram"],[astro-icon="icon-twitter"]{
+      width: 20px;
+   }
+
+   [astro-icon="icon-facebook"]:hover, [astro-icon="icon-instagram"]:hover,[astro-icon="icon-twitter"]:hover{
+      fill: var(--golden);
+   }
+
+   @media(min-width: 700px){
+
+      .padding{
+      padding-top: 56px;
+      padding-bottom: 56px;
+   }
+      .flex{
+         display: flex;
+         justify-content: space-between;
+         height: 104px;
+      }
+
+      .text{
+         width: 281px;
+      }
+      
+      p{
+         font-size: var(--body-s2);
+
+      }
+
+   }
+
+     @media(min-width: 1000px){
+      .padding{
+         padding-top: 80px;
+         padding-bottom: 80px;
+      }
+
+      .flex{
+         height: 84px;
+      }
+
+      .logos{
+         width: 160px;
+      }
+
+      .text{
+         width: 430px;
+      }
+
+      p{
+         font-size: var(--body-s);
+      }
+     }
+  
+
 </style>
 
-<!-- the footer component will take a prop I pass to it -->
-<!-- locationlayout is passing the colors props to this component -->
+
+<!-- FUTURE REFERENCE EXAMPLE -->
+
+<!-- I could have also put ternary in the frontmatter 
+import {Icon} from 'astro-icon';
+const {colors}= Astro.props;
+const logo = (colors == "black") ? "logo-light" : "logo-dark";
+---
+<footer style=`background-color: ${colors}` >
+   <div class="content-container">
+      <Icon name={logo} />
+      <p>The Modern Art Gallery is free to all visitors and open seven days a week from 8am to 9pm. Find us at 99 King Street, Newport, USA.</p>
+      <div class="social-links">
+        
+      </div>
+   </div>
+</footer>
+
+-->
+

@@ -1,5 +1,5 @@
 //add or remove global css class based on screen size
-// const div = document.getElementById('div');
+const div = document.getElementById('div');
    
 window.addEventListener('resize',function(){
    

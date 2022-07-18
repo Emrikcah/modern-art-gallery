@@ -1,6 +1,11 @@
 ---
 import {Icon} from 'astro-icon'
 const {colors}= Astro.props
+
+ const textColor = (colors == '--black') ? ("color: var(--white)"):("color: var(--black)");
+ const socialIcons = (colors == '--black') ? ("white"):("black");
+ const socialIconsHover = (colors == '--black') ? ("#d5966c"):("white");
+
 ---
 
 
@@ -15,12 +20,12 @@ const {colors}= Astro.props
                (<Icon name="logo-light"/>) : (<Icon name="logo-dark"/>)}
          </div>
             <div class="text">
-               <p>The Modern Art Gallery is free to all visitors and open seven days a week from 8am to 9pm. Find us at 99 King Street, Newport, USA.</p>
+               <p style={textColor}>The Modern Art Gallery is free to all visitors and open seven days a week from 8am to 9pm. Find us at 99 King Street, Newport, USA.</p>
             </div>
             <div class="social-links">
                <!-- icons go here -->
                <a href="https://www.facebook.com">
-                  <Icon name="icon-facebook" />
+                  <Icon name="icon-facebook" class="red"/>
                </a>
                <a href="https://www.instagram.com">
                   <Icon name="icon-instagram" />
@@ -34,7 +39,7 @@ const {colors}= Astro.props
    </div>
 </footer>
 
-<style lang="css">
+<style lang="css" define:vars={{socialIcons,socialIconsHover}}>
 
    .padding{
       padding-top: 48px;
@@ -60,13 +65,16 @@ const {colors}= Astro.props
       color: var(--white);
    }
    
+   
    /* display flex caused svgs to disappear so i had to set the width */
    [astro-icon="icon-facebook"], [astro-icon="icon-instagram"],[astro-icon="icon-twitter"]{
       width: 20px;
+      fill: var(--socialIcons);
+     
    }
 
    [astro-icon="icon-facebook"]:hover, [astro-icon="icon-instagram"]:hover,[astro-icon="icon-twitter"]:hover{
-      fill: var(--golden);
+      fill: var(--socialIconsHover);
    }
 
    @media(min-width: 700px){
@@ -119,22 +127,5 @@ const {colors}= Astro.props
 </style>
 
 
-<!-- FUTURE REFERENCE EXAMPLE -->
 
-<!-- I could have also put ternary in the frontmatter 
-import {Icon} from 'astro-icon';
-const {colors}= Astro.props;
-const logo = (colors == "black") ? "logo-light" : "logo-dark";
----
-<footer style=`background-color: ${colors}` >
-   <div class="content-container">
-      <Icon name={logo} />
-      <p>The Modern Art Gallery is free to all visitors and open seven days a week from 8am to 9pm. Find us at 99 King Street, Newport, USA.</p>
-      <div class="social-links">
-        
-      </div>
-   </div>
-</footer>
-
--->
 

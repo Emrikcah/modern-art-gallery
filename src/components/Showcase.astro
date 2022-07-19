@@ -132,6 +132,11 @@ const dSrcset = `${dGranny} 1x, ${dGranny2x} 2x`;
 
       .picture-container{
          grid-column: 2;
+
+      }
+      
+      .picture{
+         background-color: var(--black);
       }
 
       .content{
@@ -147,9 +152,11 @@ const dSrcset = `${dGranny} 1x, ${dGranny2x} 2x`;
       }
 
       h1{
+         color: var(--white);
          font-size: var(--heading-xl);
          line-height: var(--lineheight-xl);
          margin-bottom: 0;
+         mix-blend-mode: difference;
        
       }
 

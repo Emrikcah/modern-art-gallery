@@ -1,3 +1,4 @@
+//No longer in use due to absoulute positioning on the button. Keep for reference
 //add or remove global css class based on screen size
 const div = document.getElementById('div');
    

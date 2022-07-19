@@ -1,19 +1,17 @@
 ---
-import Button from './Button.astro'
+import Button from "./Button.astro";
 
-import mGranny from '/assets/mobile/image-hero.jpg'
-import mGranny2x from '/assets/mobile/image-hero@2x.jpg'
-import tGranny from '/assets/tablet/image-hero.jpg'
-import tGranny2x from '/assets/tablet/image-hero@2x.jpg'
-import dGranny from '/assets/desktop/image-hero.jpg'
-import dGranny2x from '/assets/desktop/image-hero@2x.jpg'
+import mGranny from "/assets/mobile/image-hero.jpg";
+import mGranny2x from "/assets/mobile/image-hero@2x.jpg";
+import tGranny from "/assets/tablet/image-hero.jpg";
+import tGranny2x from "/assets/tablet/image-hero@2x.jpg";
+import dGranny from "/assets/desktop/image-hero.jpg";
+import dGranny2x from "/assets/desktop/image-hero@2x.jpg";
 
-import rightArrow from '/assets/icon-arrow-right.svg'
-
+import rightArrow from "/assets/icon-arrow-right.svg";
 
 const tSrcset = `${tGranny} 1x, ${tGranny2x} 2x`;
 const dSrcset = `${dGranny} 1x, ${dGranny2x} 2x`;
-
 ---
 
 <section class="showcase">
@@ -23,145 +21,134 @@ const dSrcset = `${dGranny} 1x, ${dGranny2x} 2x`;
       <div class="picture-container">
          <picture>
             <!-- media will be size of content container -->
-         <source srcset={dSrcset} media="(min-width: 1330px)" type="image/jpg">
-         <source srcset={tSrcset} media="(min-width: 700px)" type="image/jpg">
-         <img src={mGranny} alt="older woman with glasses" srcset={mGranny2x}>
+            <source srcset={dSrcset} media="(min-width: 1330px)" type="image/jpg" />
+            <source srcset={tSrcset} media="(min-width: 700px)" type="image/jpg" />
+            <img src={mGranny} alt="older woman with glasses" srcset={mGranny2x} />
          </picture>
       </div>
-      
-         <div class="content content-container">
-               <h1 class="title">modern <br/> art gallery</h1>
-               <div class="content-text">
-                  <p>The arts in the collection of the Modern Art Gallery all started from a spark of inspiration. Will these pieces inspire you? Visit us and find out.</p>
-                  <Button text="Our location" whereTo="/location" img={rightArrow} altText="right arrow"/>
-               </div>
+
+      <div class="content content-container ">
+         <h1 class="title">modern <br /> art gallery</h1>
+         <div class="content-text">
+            <p>
+               The arts in the collection of the Modern Art Gallery all started from a spark of inspiration. Will these pieces inspire you? Visit us
+               and find out.
+            </p>
+            <Button text="Our location" whereTo="/location" img={rightArrow} altText="right arrow" />
          </div>
-     
+      </div>
    </div>
 </section>
 
 <style>
-
-   .showcase{
+   .showcase {
       margin-bottom: 120px;
    }
 
-.blackBg{
-   align-self: start;
-   background-color: var(--black);
-   width: 450px;
-   height: 800px;
-   display: none;
-}
+   .blackBg {
+      align-self: start;
+      background-color: var(--black);
+      width: 450px;
+      height: 800px;
+      display: none;
+   }
 
-.picture-container{
+   .picture-container {
       margin-bottom: 3.2rem;
-}
+   }
 
-   .content-container{
+   .content-container {
       max-width: 343px;
       margin: auto;
    }
 
-   h1{
+   h1 {
       font-size: var(--heading-m);
       line-height: var(--lineheight-m);
       font-weight: 900;
       text-transform: uppercase;
    }
 
-   h1,p{
+   h1,
+   p {
       margin-bottom: 3.2rem;
    }
 
-   p{
+   p {
       line-height: 2.8rem;
    }
 
-   
-   @media(min-width: 700px){
-      .grid{
+   @media (min-width: 700px) {
+      .grid {
          display: grid;
          grid-template-columns: 437px auto;
          align-items: center;
       }
 
-     
-      .content{
-         transform: translateX(-5rem);
-      }
-      h1{
+      h1 {
          font-size: var(--heading-l);
          line-height: var(--lineheight-l);
       }
 
-      h1,p{
+      h1,
+      p {
          margin-bottom: 4.8rem;
       }
    }
 
-   @media(min-width: 1000px){
-      
-      .grid{
+   @media (min-width: 1000px) {
+      .grid {
          grid-template-columns: 450px 540px 1fr;
       }
 
-      .content{
+      .content {
          display: flex;
          justify-content: space-between;
-         min-height: 48vh;
+         min-height: 64vh;
          min-width: 1110px;
          margin: 0 auto;
-         
       }
-     
-      .content-text{
+
+      .content-text {
          max-width: 350px;
       }
-      .blackBg{
+      .blackBg {
          display: block;
       }
 
-      .blackBg,.picture-container,.content{
+      .blackBg,
+      .picture-container,
+      .content {
          grid-row: 1;
       }
-      .blackBg{
+      .blackBg {
          grid-column: 1;
       }
 
-      .picture-container{
+      .picture-container {
          grid-column: 2;
-
       }
-          
-      .content{
+
+      .content {
          grid-column: 1/-1;
       }
 
-      .title{
-         margin-left: 45px;
-      }
-
-      .content-text{
+      .content-text {
          margin-right: -40px;
       }
 
-      h1{
+      h1 {
          color: var(--white);
          font-size: var(--heading-xl);
          line-height: var(--lineheight-xl);
          margin-bottom: 0;
          mix-blend-mode: difference;
-       
       }
-     
-      p{
+
+      p {
          font-size: var(--body-m);
          line-height: var(--body-lineheight-m);
          margin-bottom: 6.4rem;
       }
-
-
    }
-
 </style>

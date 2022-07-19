@@ -1,33 +1,35 @@
 ---
 const { title } = Astro.props;
-
 ---
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width">
-  <link rel="icon" type="image/x-icon" href="/assets/favicon-32x32.png" />
-  <!-- google fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@400;800;900&family=Outfit:wght@300&display=swap" rel="stylesheet">
-<!-- google fonts end -->
-<!-- leaflet css-->
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
-integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
-crossorigin=""/>
-<!-- leaflet css end -->
+   <meta charset="UTF-8" />
+   <meta name="viewport" content="width=device-width" />
+   <link rel="icon" type="image/x-icon" href="/assets/favicon-32x32.png" />
+   <!-- google fonts -->
+   <link rel="preconnect" href="https://fonts.googleapis.com" />
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+   <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@400;800;900&family=Outfit:wght@300&display=swap" rel="stylesheet"
+   />
+   <!-- google fonts end -->
+   <!-- leaflet css-->
+   <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+      integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+      crossorigin=""
+   />
+   <!-- leaflet css end -->
 
-<script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
-integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
-crossorigin="anonymous">
+   <script
+      src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+      integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
+      crossorigin="anonymous"
+   >
 
-</script>
+   </script>
 
-
-
-
-	<title>{title}</title>
+   <title>{title}</title>
 </head>
 
 <!-- If a cdn script doesnt work then remove crossorigin or add anonymous to it. Dont leave it blank -->

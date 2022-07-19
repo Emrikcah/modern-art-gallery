@@ -1,25 +1,22 @@
 ---
-const {img} = Astro.props
-const {altText} = Astro.props
-const {text} = Astro.props
-const {whereTo} = Astro.props
+const { img } = Astro.props;
+const { altText } = Astro.props;
+const { text } = Astro.props;
+const { whereTo } = Astro.props;
 
 //for css
-const {order} = Astro.props
+const { order } = Astro.props;
 ---
 
 <div class="link">
    <a href={whereTo}>{text}</a>
    <div class="arrow">
-      <img src={img} alt={altText}>
+      <img src={img} alt={altText} />
    </div>
 </div>
 
-<style define:vars={{order}}>
-
-
-
-   a{
+<style define:vars={{ order }}>
+   a {
       color: var(--white);
       font-size: var(--heading-s2);
       font-weight: 800;
@@ -27,39 +24,39 @@ const {order} = Astro.props
       text-transform: uppercase;
       order: var(--order);
       line-height: 2.394rem;
-      letter-spacing: .364rem;
+      letter-spacing: 0.364rem;
       margin: auto;
    }
 
-   .link,.arrow{
+   .link,
+   .arrow {
       display: flex;
       align-items: center;
       height: 72px;
-      
    }
 
-   .link{
+   .link {
       justify-content: space-between;
       background-color: var(--black);
       width: 260px;
-    }
+   }
 
-   .arrow{
+   .arrow {
       background-color: var(--golden);
       justify-content: center;
       width: 56px;
    }
 
-   .link:hover{
+   .link:hover {
       background-color: var(--golden);
    }
 
-   .link:hover .arrow{
+   .link:hover .arrow {
       background-color: var(--black);
    }
-   
-   .link:hover,.link:hover .arrow{
-      transition: background-color .5s ease-out;
 
+   .link:hover,
+   .link:hover .arrow {
+      transition: background-color 0.5s ease-out;
    }
 </style>

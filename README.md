@@ -13,7 +13,7 @@ Users should be able to:
 
 
 ### Links
-- Live Site URL: [Add live site URL here](https://art-gallery-site-astro.netlify.app)
+- Live Site URL: [(https://art-gallery-site-astro.netlify.app)]
 
 
 ### Built with

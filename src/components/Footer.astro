@@ -1,31 +1,28 @@
 ---
-import {Icon} from 'astro-icon'
-const {colors}= Astro.props
+import { Icon } from "astro-icon";
+const { colors } = Astro.props;
 
- const textColor = (colors == '--black') ? ("color: var(--white)"):("color: var(--black)");
- const socialIcons = (colors == '--black') ? ("white"):("black");
- const socialIconsHover = (colors == '--black') ? ("#d5966c"):("white");
-
+const textColor = colors == "--black" ? "color: var(--white)" : "color: var(--black)";
+const socialIcons = colors == "--black" ? "white" : "black";
+const socialIconsHover = colors == "--black" ? "#d5966c" : "white";
 ---
 
-
-<footer style={`background-color:var(${colors})`} >
-
+<footer style={`background-color:var(${colors})`}>
    <div class="content-container">
-
-   <div class="padding">
-      <div class="flex">
-         <div class="logos">
-            {(colors == '--black') ?
-               (<Icon name="logo-light"/>) : (<Icon name="logo-dark"/>)}
-         </div>
+      <div class="padding">
+         <div class="flex">
+            <div class="logos">
+               {colors == "--black" ? <Icon name="logo-light" /> : <Icon name="logo-dark" />}
+            </div>
             <div class="text">
-               <p style={textColor}>The Modern Art Gallery is free to all visitors and open seven days a week from 8am to 9pm. Find us at 99 King Street, Newport, USA.</p>
+               <p style={textColor}>
+                  The Modern Art Gallery is free to all visitors and open seven days a week from 8am to 9pm. Find us at 99 King Street, Newport, USA.
+               </p>
             </div>
             <div class="social-links">
                <!-- icons go here -->
                <a href="https://www.facebook.com">
-                  <Icon name="icon-facebook" class="red"/>
+                  <Icon name="icon-facebook" />
                </a>
                <a href="https://www.instagram.com">
                   <Icon name="icon-instagram" />
@@ -34,98 +31,90 @@ const {colors}= Astro.props
                   <Icon name="icon-twitter" />
                </a>
             </div>
+         </div>
       </div>
-   </div>
    </div>
 </footer>
 
-<style lang="css" define:vars={{socialIcons,socialIconsHover}}>
-
-   .padding{
+<style lang="css" define:vars={{ socialIcons, socialIconsHover }}>
+   .padding {
       padding-top: 48px;
       padding-bottom: 48px;
    }
 
-   .logos{
+   .logos {
       width: 110px;
       margin-bottom: 38px;
    }
 
-   .text{
+   .text {
       margin-bottom: 38px;
    }
 
-   .social-links{
+   .social-links {
       display: flex;
       justify-content: space-between;
       width: 100px;
    }
 
-   p{
+   p {
       color: var(--white);
    }
-   
-   
+
    /* display flex caused svgs to disappear so i had to set the width */
-   [astro-icon="icon-facebook"], [astro-icon="icon-instagram"],[astro-icon="icon-twitter"]{
+   [astro-icon="icon-facebook"],
+   [astro-icon="icon-instagram"],
+   [astro-icon="icon-twitter"] {
       width: 20px;
       fill: var(--socialIcons);
-     
    }
 
-   [astro-icon="icon-facebook"]:hover, [astro-icon="icon-instagram"]:hover,[astro-icon="icon-twitter"]:hover{
+   [astro-icon="icon-facebook"]:hover,
+   [astro-icon="icon-instagram"]:hover,
+   [astro-icon="icon-twitter"]:hover {
       fill: var(--socialIconsHover);
    }
 
-   @media(min-width: 700px){
-
-      .padding{
-      padding-top: 56px;
-      padding-bottom: 56px;
-   }
-      .flex{
+   @media (min-width: 700px) {
+      .padding {
+         padding-top: 56px;
+         padding-bottom: 56px;
+      }
+      .flex {
          display: flex;
          justify-content: space-between;
          height: 104px;
       }
 
-      .text{
+      .text {
          width: 281px;
       }
-      
-      p{
+
+      p {
          font-size: var(--body-s2);
-
       }
-
    }
 
-     @media(min-width: 1000px){
-      .padding{
+   @media (min-width: 1000px) {
+      .padding {
          padding-top: 80px;
          padding-bottom: 80px;
       }
 
-      .flex{
+      .flex {
          height: 84px;
       }
 
-      .logos{
+      .logos {
          width: 160px;
       }
 
-      .text{
+      .text {
          width: 430px;
       }
 
-      p{
+      p {
          font-size: var(--body-s);
       }
-     }
-  
-
+   }
 </style>
-
-
-
-

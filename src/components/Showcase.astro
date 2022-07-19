@@ -21,7 +21,7 @@ const dSrcset = `${dGranny} 1x, ${dGranny2x} 2x`;
    <div class="grid">
       <div class="blackBg"></div>
       <div class="picture-container">
-         <picture class="picture">
+         <picture>
             <!-- media will be size of content container -->
          <source srcset={dSrcset} media="(min-width: 1330px)" type="image/jpg">
          <source srcset={tSrcset} media="(min-width: 700px)" type="image/jpg">
@@ -30,13 +30,11 @@ const dSrcset = `${dGranny} 1x, ${dGranny2x} 2x`;
       </div>
       
          <div class="content content-container">
-            
                <h1 class="title">modern <br/> art gallery</h1>
                <div class="content-text">
                   <p>The arts in the collection of the Modern Art Gallery all started from a spark of inspiration. Will these pieces inspire you? Visit us and find out.</p>
                   <Button text="Our location" whereTo="/location" img={rightArrow} altText="right arrow"/>
                </div>
-          
          </div>
      
    </div>
@@ -54,7 +52,6 @@ const dSrcset = `${dGranny} 1x, ${dGranny2x} 2x`;
    width: 450px;
    height: 800px;
    display: none;
-   
 }
 
 .picture-container{
@@ -104,6 +101,7 @@ const dSrcset = `${dGranny} 1x, ${dGranny2x} 2x`;
    }
 
    @media(min-width: 1000px){
+      
       .grid{
          grid-template-columns: 450px 540px 1fr;
       }
@@ -114,6 +112,7 @@ const dSrcset = `${dGranny} 1x, ${dGranny2x} 2x`;
          min-height: 48vh;
          min-width: 1110px;
          margin: 0 auto;
+         
       }
      
       .content-text{
@@ -134,11 +133,7 @@ const dSrcset = `${dGranny} 1x, ${dGranny2x} 2x`;
          grid-column: 2;
 
       }
-      
-      .picture{
-         background-color: var(--black);
-      }
-
+          
       .content{
          grid-column: 1/-1;
       }
@@ -159,7 +154,6 @@ const dSrcset = `${dGranny} 1x, ${dGranny2x} 2x`;
          mix-blend-mode: difference;
        
       }
-
      
       p{
          font-size: var(--body-m);
